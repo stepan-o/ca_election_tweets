@@ -1,0 +1,29 @@
+Initial Selection:
+
+- Google Search: Canadian Election Hashtags.
+Source1:http://politwitter.ca/page/canadian-politics-hash-tags
+Source: http://www.davidakin.com/politicaltwits/hashtags.htm
+
+- For each major political party (one that holds >0 seats in parliment), each leader
+was searched for on Twitter. Their name was turned into a hashtags. A brief scroll through
+the top tweets was done. Any slogan like hashtag, or common hashtags that came up were added to the list.
+
+- Twitter handles for political figures were also added.
+
+Source: https://en.wikipedia.org/wiki/List_of_federal_political_parties_in_Canada
+
+- Scandals were searched for the election. SNC-Lavalin scandal was searched, and tags mined.
+
+Source:https://en.wikipedia.org/wiki/List_of_political_scandals_in_Canada
+
+This list is clearly biased, but it is a start. Tags related to events outside of canada (US/Global Politics)
+were avoided. US Politics were especially avoided, as the number of tweets regarding US matters can easily overwhelm
+our dataset (the #Trump tag alone will generate more tweets than our entire list of tags).
+
+Other things to add later:
+
+- Hashtags related to important public figures and politicians
+- Hashtags involving critical canadian issues (oil, diversity, economy, etc).
+
+It would be useful to write a script that mines each tweet for new hashtags, and dynamically appends them to our
+list. We will also need an exclusion list to remove US/International tags.
