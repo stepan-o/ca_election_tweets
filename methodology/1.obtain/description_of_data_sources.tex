@@ -1,42 +1,79 @@
-%! Author = Stepan Oskin
+%! Author = Stepan and Sean
 %! Date = 2019-07-20
 
 % Preamble
 \documentclass[11pt]{article}
 
 % Packages
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
 
 % Document
 \begin{document}
 
-    \title{OSEMN methodology \\
+    \title{2019 Canadian election tweets \\
+    OSEMN methodology \\
     Step 1: Obtain data \\
     Description of data sources to be used in this project}
 
     \maketitle
 
     \begin{abstract}
-        The following document presents the cleanup plan to be performed on Sentiment 140 dataset.
+        The following document presents different data sources to be used in this project.
     \end{abstract}
 
-    \section{Sentiment 140 cleanup plan} \label{sec:data_prep}
+    \section{Streamed twitter data} \label{sec:streamed_twitter_data}
 
-    The following steps will be performed for cleaning the Sentiment 140 dataset:
+    The main dataset that was used for this project has been produced by streaming tweets filtered by hashtags relevant to 2019 Canadian Federal elections.
+    Tweets with these hashtags have been streamed continuously (with a couple of minor interruptions) from September 3rd 2019 to %TODO add finish date
 
-    1.
+    \subsection{Criteria for selecting hashtags} \label{subsec:hashtag_selection_criteria}
+
+    The following criteria has been used for hashtag selection:
+
+    Initial Selection:
+
+    - Google Search: Canadian Election Hashtags.
+    Source1:\url{http://politwitter.ca/page/canadian-politics-hash-tags}
+    Source2: \url{http://www.davidakin.com/politicaltwits/hashtags.htm}
+
+    - For each major political party (one that holds >0 seats in parliament), each leader was searched for on Twitter.
+    Their name was turned into a hashtags.
+    A brief scroll through the top tweets was done.
+    Any slogan like hashtag, or common hashtags that came up were added to the list.
+
+    - Twitter handles for political figures were also added.
+
+    Source: https://en.wikipedia.org/wiki/List_of_federal_political_parties_in_Canada
+
+    - Scandals were searched for the election.
+    SNC-Lavalin scandal was searched, and tags mined.
+    Brownface hashtag has been added for Justin Trudeau.
+
+    Source:https://en.wikipedia.org/wiki/List_of_political_scandals_in_Canada
+
+    Tags related to events outside of canada (US/Global Politics) were avoided.
+    US Politics were especially avoided, as the number of tweets regarding US matters can easily overwhelm our dataset (the #Trump tag alone will generate more tweets than our entire list of tags).
+
+    \subsection{List of hashtags used to filter streamed tweets} \label{subsec:list_of_hashtags}
+
+    #canadaelection2019 #cdnpoli #ptlib #ipc #ndp #cdnleft #cpc #roft #elxn43 #canlab #polcan #polqc #PPC2019 #pttory #ptndp #ptgreen
+    #ptbloc #gpc #canpoli #cdnsen #cpac #goc #lavscam #Trudeau #TrudeauMustGo #StopScheer #InItForYou #GPC #Election2019 #LetMaxin
+    #LetMaxSpeek #NotAsAdvertised #LavScam #SNCLavalin #SheerHypocrisy #ScheerHypocrisy #BrownFaceTrudeau #IStandWithTrudeau
+    @yfblanchet @AndrewScheer @theJagmeetSingh @MaximeBernier @JustinTrudeau @ElizabethMay
+
+    \section{Sentiment 140} \label{sec:sentiment_140}
+
+    In order to train a classifier, supervised learning usually requires labelled training data.
+    In case of Twitter data, due to a large range of topics being discussed on 
+    Sentiment 140 is a dataset
 
 \end{document}
 
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="PYTHON_MODULE" version="4">
-<component name="NewModuleRootManager">
-<content url="file://$MODULE_DIR$">
-<sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-</content>
-<orderEntry type="inheritedJdk" />
-<orderEntry type="sourceFolder" forTests="false" />
-</component>
-<component name="TestRunnerService">
-<option name="PROJECT_TEST_RUNNER" value="Unittests" />
-</component>
-</module>
