@@ -1,2 +1,2 @@
 # ca_election_tweets
-Analysis and modelling of tweets related to Canadian Federal election of 2019.
+Analysis and modelling of tweets involving the 2019 Canadian Federal election.
