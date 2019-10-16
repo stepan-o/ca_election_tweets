@@ -13,4 +13,6 @@ def preprocessor(text):
     emoticons = re.findall('[:;=](?:-)?[)(DP|]', text)
     # lower case, remove all non-word characters, add emoticons to the end of the string, remove the "nose" '-'
     text = (re.sub('[\W]+', ' ', text.lower()) + ' '.join(emoticons).replace('-', ''))
+    # strip leading and trailing whitespaces, replace multiple spaces with a single
+    text = re.sub('\s+', ' ', text)
     return text
