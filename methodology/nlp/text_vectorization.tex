@@ -1,0 +1,76 @@
+%! Author = stepan
+%! Date = 2019-07-20
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+
+% Document
+\begin{document}
+
+    \title{Text vectorization \\
+    Excerpts from machine learning books \\
+    and scikit-learn documentation}
+
+    \maketitle
+
+    \begin{abstract}
+        This document presents description of NLP techniques that can be used for text vectorization.
+    \end{abstract}
+
+    \section{Text vectorization} \label{sec:text_vectorization}
+
+    From scikit-learn documentation\cite{Scikit-learndevelopers2019}:
+
+    Machine learning algorithms operate on a numeric feature space, expecting input as a two-dimensional array where rows are instances and columns are features.
+
+    A corpus of documents can be represented by a matrix with one row per document and one column per token (e.g\. word) occurring in the corpus.
+
+    The general process of turning a collection of text documents into numerical feature vectors is called \textbf{vectorization}.
+
+    The choice of a specific vectorization technique will be largely driven by the problem space.
+    There are several choices available as to what should each element in the document vector be, such as:
+
+    * frequency
+
+    * one-hot
+
+    * TF-IDF
+
+    * distributed representations
+
+    \section{Bag of Words (BoW) / bag-of-n-grams} \label{sec:bag_of_words}
+
+    From Bengfort et al.\cite{Bengfort2018}:
+
+    One of the specific strategies of tokenizing, counting, and normalization is called the \textbf{Bag of Words} or \textbf{Bag of n-grams} representation.
+    Documents are described by word occurrences while completely ignoring the relative position information of the words in the document.
+
+    To vectorize a corpus with a bag-of-words (BOW) approach, we represent every document from the corpus as a vector whose length is equal to the vocabulary of the corpus.
+    We can simplify the computation by sorting token positions of the vector into alphabetical order.
+    Alternatively, we can keep a dictionary that maps tokens to vector positions.
+    Either way, we arrive at a vector mapping of the corpus that enables us to uniquely represent every document.
+
+    \vspace{5mm}
+
+    From Raschka and Mirjalili\cite{RaschkaMirjalili2017}:
+
+    Bag-of-words is a simple technique that allows representing text as numerical feature vectors using raw term frequencies.
+
+    The idea behind the bag-of-words model is quite simple and can be summarized as follows:
+
+    \begin{enumerate}
+        \item Create a vocabulary of unique tokens\textemdash for example, words\textemdash from the entire set of documents.
+        \item Construct a feature vector from each document that contains the counts of how often each word occurs in the particular document.
+    \end{enumerate}
+
+    Since the unique words in each document represent only a small subset of all the words in the bag-of-words vocabulary, the resultant feature vectors will be sparse (mostly consist of zeros).
+
+    Bag of words represents raw term frequencies: $tf(t, d)$\textemdash the number of times a term $t$ occurs in a document $d$.
+
+
+    \bibliography{text_vectorization}
+    \bibliographystyle{ieeetr}
+
+\end{document}
